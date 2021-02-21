@@ -1,0 +1,86 @@
+# If your theme is not using the supported directory structure, provide the root path
+# where to find the `templates/`, `sections/`, `snippets/` directories as they would
+# be uploaded to Shopify.
+# It is possible to extend theme-check with custom checks
+root: .
+
+require: []
+
+ignore:
+  - node_modules/*
+
+ConvertIncludeToRender:
+  enabled: false
+
+LiquidTag:
+  enabled: true
+
+MissingTemplate:
+  enabled: false
+
+NestedSnippet:
+  enabled: false
+
+RequiredLayoutThemeObject:
+  enabled: false
+
+SpaceInsideBraces:
+  enabled: false
+
+SyntaxError:
+  enabled: false
+
+TemplateLength:
+  enabled: false
+  max_length: 200
+  # Exclude content of {% schema %} in line count
+  exclude_schema: true
+
+UnknownFilter:
+  enabled: false
+
+UnusedAssign:
+  enabled: false
+
+UnusedSnippet:
+  enabled: false
+
+MatchingSchemaTranslations:
+  enabled: false
+
+MatchingTranslations:
+  enabled: false
+
+DefaultLocale:
+  enabled: false
+
+TranslationKeyExists:
+  enabled: false
+
+ValidHTMLTranslation:
+  enabled: false
+
+ValidJson:
+  enabled: false
+
+ValidSchema:
+  enabled: false
+
+MissingRequiredTemplateFiles:
+  enabled: false
+
+UndefinedObject:
+  enabled: false
+  exclude_snippets: true
+
+RequiredDirectories:
+  enabled: false
+
+DeprecatedFilter:
+  enabled: false
+
+MissingEnableComment:
+  enabled: false
+
+ParserBlockingJavaScript:
+  enabled: false

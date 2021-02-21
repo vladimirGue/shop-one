@@ -1,6 +1,6 @@
 window.theme = window.theme || {};
 window.slate = window.slate || {};
-console.log('hola mundo');
+console.log('hola mundo mio');
 
 /* ================ SLATE ================ */
 theme.Sections = function Sections() {

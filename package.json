@@ -1,0 +1,28 @@
+{
+  "name": "shopi-ci",
+  "version": "1.0.0",
+  "description": "integracion continua para shopify",
+  "main": "main.js",
+  "scripts": {
+    "test": "theme-check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimirGue/shop-one.git"
+  },
+  "keywords": [
+    "shopify",
+    "CI"
+  ],
+  "author": "vladimir guerra m.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vladimirGue/shop-one/issues"
+  },
+  "homepage": "https://github.com/vladimirGue/shop-one#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ngrok": "^3.4.0",
+    "shopify-api-node": "^3.6.5"
+  }
+}

@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Shopify-CI
 
 # Controls when the action will run. 
 on:
@@ -10,16 +10,17 @@ on:
       - master
   pull_request:
     branches: 
-      - develop
+      - master
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  #workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
+    name: Build + Deploy Preview
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -27,12 +28,56 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          version: 10.x
+
+      - name: Use Yarn 1.17.2
+        run: |
+          npm install -g yarn@1.17.2
+          yarn
+      - name: theme check Locales
+      # ver si este punto funcion, sino crear otro directorio
+        run: |
+          npm i -g @shopify/theme-check
+          theme-check .
+        
+      - name: Lint Theme Config Files
+        run: |
+          npm i -g jsonlint-tree
+          jsonlint-tree src/config
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Zip Theme
+        run: node .github/workflows/scripts/theme-zip.js
+
+      - name: Delete existing PR Theme
+        run: node .github/workflows/scripts/theme-delete.js 
+        env:
+          SHOP_NAME: ${{SECRET_SHOP_NAME}}
+          API_KEY: ${{SECRET_API_KEY}}
+          API_PASSWORD: ${{SECRET_API_PASSWORD}}
+          GITHUB_REPOSITORY: ${{SECRET_GIT_REF}}
+          GITHUB_EVENT_PATH: ${{SECRET_EVENT_PATH}}
+          GITHUB_SHA: ${{SECRET_SHA}}
+          GITHUB_REF: ${{SECRET_GIT_REF}}
+
+      - name: Upload Theme to Shopify
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          node .github/workflows/scripts/theme-upload.js
+          node .github/workflows/scripts/theme-check.js
+
+        env:
+          SHOP_NAME: ${{SECRET_SHOP_NAME}}
+          API_KEY: ${{SECRET_API_KEY}}
+          API_PASSWORD: ${{SECRET_API_PASSWORD}}
+          NGROK_AUTH_TOKEN: ${{SECRET_NGROK_AUTH_TOKEN}}
+          GITHUB_REPOSITORY: ${{SECRET_GIT_REF}}
+          GITHUB_EVENT_PATH: ${{SECRET_EVENT_PATH}}
+          GITHUB_SHA: ${{SECRET_SHA}}
+          GITHUB_TOKEN: ${{SECRET_GIT_TOKEN}}
+          GITHUB_REF: ${{SECRET_GIT_REF}}
