@@ -26,10 +26,10 @@ jobs:
     - name: Delete Theme
       run: node .github/workflows/scripts/theme-delete.js
       env:
-        SHOP_NAME: ${{SECRET_SHOP_NAME}}
-        API_KEY: ${{SECRET_API_KEY}}
-        API_PASSWORD: ${{SECRET_API_PASSWORD}}
-        GITHUB_REPOSITORY: ${{SECRET_GIT_REF}}
-        GITHUB_EVENT_PATH: ${{SECRET_EVENT_PATH}}
-        GITHUB_SHA: ${{SECRET_SHA}}
-        GITHUB_REF: ${{SECRET_GIT_REF}}
+        SHOP_NAME: ${{secrets.SECRET_SHOP_NAME}}
+        API_KEY: ${{secrets.SECRET_API_KEY}}
+        API_PASSWORD: ${{secrets.SECRET_API_PASSWORD}}
+        GITHUB_REPOSITORY: ${{secrets.SECRET_GIT_REF}}
+        GITHUB_EVENT_PATH: ${{secrets.SECRET_EVENT_PATH}}
+        GITHUB_SHA: ${{secrets.SECRET_SHA}}
+        GITHUB_REF: ${{secrets.SECRET_GIT_REF}}
