@@ -67,7 +67,7 @@ jobs:
           GITHUB_SHA: ${{secrets.SECRET_SHA}}
           GITHUB_REF: ${{secrets.SECRET_GIT_REF}}
 
-      - name: Upload Theme to Shopify
+      - name: Upload Theme to Shopify One
         run: |
           node .github/workflows/scripts/theme-upload.js
           node .github/workflows/scripts/theme-check.js
