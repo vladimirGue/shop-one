@@ -33,6 +33,11 @@ jobs:
         with:
           version: 10.x
 
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+
       - name: Use Yarn 1.17.2
         run: |
           npm install -g yarn@1.17.2
@@ -40,8 +45,8 @@ jobs:
       - name: theme check Locales
       # ver si este punto funcion, sino crear otro directorio
         run: |
-          npm i -g @shopify/theme-check
-          theme-check .
+          gem install theme-check
+          theme-check
         
       - name: Lint Theme Config Files
         run: |
