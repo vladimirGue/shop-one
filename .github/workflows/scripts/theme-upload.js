@@ -30,11 +30,8 @@ const uploadTheme = async () => {
 
         const ngrokUrl = await ngrok.connect({
             proto: 'http',
-            auth: 'user:pwd',
             authtoken: NGROK_AUTH_TOKEN,
             port,
-            onStatusChange: status => {}, // 'closed' - connection is lost, 'connected' - reconnected
-	        onLogEvent: data => {}, // returns stdout messages from ngrok process
         });
 
         const data = prData.getPrData();
