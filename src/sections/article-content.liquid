@@ -11,15 +11,15 @@
       assign duplicate_comment = true
       break
     endif
-  endfor %}
+  endfor
 
-  {% liquid if duplicate_comment
+  if duplicate_comment
     assign number_of_comments = article.comments_count
   else
     assign number_of_comments = article.comments_count | plus: 1
   endif
 else
-  assign number_of_comments = article.comments_count
+    assign number_of_comments = article.comments_count
 endif %}
 
 <div class="content-block">
