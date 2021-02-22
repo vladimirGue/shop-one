@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/vladimirGue/shop-one#readme",
   "dependencies": {
+    "archiver": "^5.2.0",
     "dotenv": "^8.2.0",
     "ngrok": "^3.4.0",
     "shopify-api-node": "^3.6.5"
