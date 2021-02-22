@@ -18,7 +18,7 @@ const {
 
 const uploadTheme = async () => {
     try {
-        const port = 4040;
+        const port = 51472;
         const params = {
             port, // Defaults to 8080
             open: false, // don't load browser
