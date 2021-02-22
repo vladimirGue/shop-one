@@ -29,7 +29,6 @@ const uploadTheme = async () => {
         liveServer.start(params);
 
         const ngrokUrl = await ngrok.connect({
-            proto: 'http',
             authtoken: NGROK_AUTH_TOKEN,
             port,
         });
