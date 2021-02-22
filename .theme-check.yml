@@ -4,8 +4,6 @@
 # It is possible to extend theme-check with custom checks
 root: .
 
-require: []
-
 ignore:
   - node_modules/*
 

@@ -33,10 +33,10 @@ jobs:
         with:
           version: 10.x
 
-      - name: Set up Ruby 2.6
+      - name: Set up Ruby 2.7.x
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.6
+          ruby-version: 2.7.x
 
       - name: Use Yarn 1.17.2
         run: |
