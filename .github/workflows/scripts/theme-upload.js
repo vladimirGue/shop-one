@@ -26,14 +26,11 @@ const uploadTheme = async () => {
             file: 'theme.zip', // Server the theme zip directly
             logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
             watch: 'theme.zip',
-            middleware: [function(req, res, next) { next(); }],
         };
         liveServer.start(params);
 
         const ngrokUrl = await ngrok.connect({
-            proto: 'http',
             authtoken: NGROK_AUTH_TOKEN,
-            addr:8181,
         });
 
         const data = prData.getPrData();
