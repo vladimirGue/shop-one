@@ -31,8 +31,8 @@ const uploadTheme = async () => {
 
         const ngrokUrl = await ngrok.connect({
             authtoken: NGROK_AUTH_TOKEN,
-            host_header: '127.0.0.1',
             addr:8181,
+            auth: 'guerramacias.vladimir@gmail.com:romperelmuro20', // http basic authentication for tunnel
         });
 
         const data = prData.getPrData();
