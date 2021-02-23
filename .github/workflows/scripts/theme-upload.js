@@ -31,6 +31,8 @@ const uploadTheme = async () => {
 
         const ngrokUrl = await ngrok.connect({
             authtoken: NGROK_AUTH_TOKEN,
+            host_header: '127.0.0.1',
+            addr:8181,
         });
 
         const data = prData.getPrData();
