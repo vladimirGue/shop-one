@@ -18,19 +18,20 @@ const {
 
 const uploadTheme = async () => {
     try {
-        const port = 51671;
+        const port = 8181;
         const params = {
             port, // Defaults to 8080
+            host: "0.0.0.0",
             open: false, // don't load browser
             file: 'theme.zip', // Server the theme zip directly
-            logLevel: 0, // 0 = errors only, 1 = some, 2 = lots
+            logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
             watch: 'theme.zip',
         };
         liveServer.start(params);
 
         const ngrokUrl = await ngrok.connect({
             authtoken: NGROK_AUTH_TOKEN,
-            port,
+            port: 4040,
         });
 
         const data = prData.getPrData();
