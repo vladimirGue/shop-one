@@ -29,7 +29,7 @@ jobs:
         SHOP_NAME: ${{secrets.SECRET_SHOP_NAME}}
         API_KEY: ${{secrets.SECRET_API_KEY}}
         API_PASSWORD: ${{secrets.SECRET_API_PASSWORD}}
-        GITHUB_REPOSITORY: ${{secrets.SECRET_GIT_REF}}
+        GITHUB_REPOSITORY: ${{secrets.SECRET_GIT_REPOSITORY}}
         GITHUB_EVENT_PATH: ${{secrets.SECRET_EVENT_PATH}}
         GITHUB_SHA: ${{secrets.SECRET_SHA}}
         GITHUB_REF: ${{secrets.SECRET_GIT_REF}}
