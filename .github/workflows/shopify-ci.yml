@@ -26,19 +26,8 @@ jobs:
         matrix:
           os:
             - ubuntu-latest
-            - macos-latest
-            - windows-latest
           node_version:
-            - 10
             - 12
-            - 14
-          architecture:
-            - x64
-          # an extra windows-x86 run:
-          include:
-            - os: windows-2016
-              node_version: 12
-              architecture: x86
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -49,9 +38,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node_version }}
-          architecture: ${{ matrix.architecture }}
-      
-      - run: npm install
 
       - name: Set up Ruby 2.7.x
         uses: actions/setup-ruby@v1
