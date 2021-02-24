@@ -4,6 +4,7 @@
   "description": "integracion continua para shopify",
   "main": "main.js",
   "scripts": {
+    "start": "node .github/workflows/scripts/theme-upload.js",
     "test": "theme-check"
   },
   "repository": {
