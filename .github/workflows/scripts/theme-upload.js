@@ -33,6 +33,20 @@ const uploadTheme = async () => {
             authtoken: '1ooEih8OBnBaqG2A8mmlG1pVV3T_2CFdNyLHHHn9a25jSE2FM', // your authtoken from ngrok.com
         });
         console.log(ngrokUrl);
+        const data = prData.getPrData();
+        const themeName = theme.getThemeName({ prNumber: data.number });
+        const themeUrl = `${ngrokUrl}/theme.zip`;
+
+        await shopifyClient.theme.create({
+            name: themeName,
+            src: themeUrl,
+        })
+            .then(async theme => {
+                console.log(theme);
+                console.log(`\x1b[33m %s \x1b[0m`, `View Theme at https://${SHOP_NAME}.myshopify.com/?preview_theme_id=${theme.id}`)
+                await ngrok.kill();
+                process.exit();
+            });
     } catch (e) {
         console.log(e);
         process.exit(1);
