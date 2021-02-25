@@ -76,7 +76,7 @@ jobs:
       - name: Upload Theme to Shopify One
         run: |
           node .github/workflows/scripts/theme-upload.js
-          node .github/workflows/scripts/theme-check.js
+        # node .github/workflows/scripts/theme-check.js
 
         env:
           SHOP_NAME: ${{secrets.SECRET_SHOP_NAME}}
