@@ -1,10 +1,6 @@
 window.theme = window.theme || {};
 window.slate = window.slate || {};
-<<<<<<< HEAD
-console.log('hola mundo de hector');
-=======
 console.log('hola Vladimir Guerra Martinez Garcia Gonzalez');
->>>>>>> origin/Hector
 
 /* ================ SLATE ================ */
 theme.Sections = function Sections() {
