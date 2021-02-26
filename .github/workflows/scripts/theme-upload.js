@@ -48,7 +48,7 @@ const uploadTheme = async () => {
                 await ngrok.kill();
                 process.exit();
             });
-        console.log('el error no es aqui');
+        console.log('el error no ess aqui');
     } catch (e) {
         console.log(e);
         process.exit(1);
