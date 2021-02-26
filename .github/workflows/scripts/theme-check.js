@@ -52,8 +52,10 @@ const checkIfThemeIsPreviewable = () => {
         .catch(err => {
             if (err.response) {
                 console.error(err.response.body)
+                console.log('error aqui');
             } else {
                 console.error(err);
+                console.log('error aqui');
             }
             process.exit();
         });
