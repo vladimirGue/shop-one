@@ -1,0 +1,14 @@
+name: Show Popularity
+
+on: [push]
+
+jobs:
+  build:
+    name: Show Popularity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Popularity
+        run: |
+          STARS=$(jq --raw-output .repository.stargazers "${{ github.event_path }}")
+          FORKS=$(jq --raw-output .repository.forks "${{ github.event_path }}")
+          echo "${{ github.repository }} has $STARS stars and $FORKS forks"
