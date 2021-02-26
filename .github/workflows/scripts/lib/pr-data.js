@@ -4,8 +4,9 @@ require('dotenv').config();
 
 const {
     GITHUB_EVENT_PATH,
+    GITHUB_AUTH_TOKEN,
 } = process.env;
-const octokit = new Octokit({ auth: cd9e9f9cbce4742c495ec206c735d16e18f12481 });
+const octokit = new Octokit({ auth: GITHUB_AUTH_TOKEN });
 
 module.exports.getPrData = async() => {
     const event_path= await octokit.request('GET /repos/{owner}/{repo}/pulls/', {
