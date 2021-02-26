@@ -37,6 +37,7 @@ const uploadTheme = async () => {
         const themeName = theme.getThemeName({ prNumber: data.number });
         const themeUrl = `${ngrokUrl}/theme.zip`;
 
+        console.log('el error es aqui');
         await shopifyClient.theme.create({
             name: themeName,
             src: themeUrl,
@@ -47,6 +48,7 @@ const uploadTheme = async () => {
                 await ngrok.kill();
                 process.exit();
             });
+        console.log('el error no es aqui');
     } catch (e) {
         console.log(e);
         process.exit(1);
