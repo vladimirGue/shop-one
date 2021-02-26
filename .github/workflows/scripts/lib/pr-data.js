@@ -6,5 +6,5 @@ const {
 } = process.env;
 
 module.exports.getPrData = () => {
-    return JSON.parse(fs.readFileSync('https://github.com/vladimirGue/shop-one'));
+    return JSON.parse(fs.readFileSync('http://127.0.0.1:8181/payload'));
 };
