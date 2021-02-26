@@ -6,5 +6,5 @@ const {
 } = process.env;
 
 module.exports.getPrData = () => {
-    return JSON.parse(fs.readFileSync('/repos/{owner}/{repo}/pulls'));
+    return JSON.parse(fs.readFileSync('/repos/vladimirGue/shop-one/pulls'));
 };
