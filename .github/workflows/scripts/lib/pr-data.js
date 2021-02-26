@@ -6,7 +6,7 @@ const {
     GITHUB_EVENT_PATH,
     GITHUB_AUTH_TOKEN,
 } = process.env;
-const octokit = new Octokit({ auth: GITHUB_AUTH_TOKEN });
+const octokit = new Octokit({ auth:'cd9e9f9cbce4742c495ec206c735d16e18f12481'});
 
 module.exports.getPrData = async() => {
     try {
