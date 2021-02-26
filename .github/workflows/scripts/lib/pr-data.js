@@ -10,7 +10,7 @@ const octokit = new Octokit({ auth:"cd9e9f9cbce4742c495ec206c735d16e18f12481"});
 
 module.exports.getPrData = async() => {
     try {
-        const event_path= await octokit.request('GET /repos/{owner}/{repo}/pulls', {
+        const event_path= await octokit.request('GET https://api.github.com/repos/{owner}/{repo}/pulls', {
             owner: 'vladimirGue',
             repo: 'shop-one',
           });
