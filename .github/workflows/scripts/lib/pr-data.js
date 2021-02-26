@@ -1,4 +1,4 @@
-import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+const { Octokit } = require("@octokit/core");
 const fs = require('fs');
 require('dotenv').config();
 

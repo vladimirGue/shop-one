@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/vladimirGue/shop-one#readme",
   "dependencies": {
+    "@octokit/core": "^3.2.5",
     "archiver": "^5.2.0",
     "dotenv": "^8.2.0",
     "live-server": "^1.2.1",
