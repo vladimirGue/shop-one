@@ -7,7 +7,7 @@ require('dotenv').config();
 const {
     SHOP_NAME,
     API_KEY,
-    API_PASSWORD
+    API_PASSWORD,
 } = process.env;
 
 if (!SHOP_NAME || !API_KEY || !API_PASSWORD) {
@@ -21,7 +21,7 @@ if (!SHOP_NAME || !API_KEY || !API_PASSWORD) {
 const shopify = new Shopify({
     shopName: SHOP_NAME,
     apiKey: API_KEY,
-    password: API_PASSWORD,
+    password: API_PASSWORD
 });
 
 module.exports = shopify;
