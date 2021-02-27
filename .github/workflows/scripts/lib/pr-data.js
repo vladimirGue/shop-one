@@ -9,15 +9,9 @@ const {
 } = process.env;
 
 getPrData = async() => {
-const appOctokit = new Octokit({
-    authStrategy: createAppAuth,
-    auth: {
-      appId: 123,
-      privateKey: process.env.PRIVATE_KEY,
-    },
-  });
+const appOctokit = new Octokit();
   
-  const { data } = await appOctokit.request("/app");
+  const { data } = await appOctokit.request("GET /repos/vladimirGue/shop-one");
   console.log(data);
 }
 /*getPrData = async() => {
