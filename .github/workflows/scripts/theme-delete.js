@@ -18,11 +18,11 @@ const listTheme = async () => {
     
     const newThemeName = theme.getThemeName({ prNumber: data.number });
     const themeNameRegex = `GITHUB-PR-${data.number}`;
-    shopifyClient.theme
+    /*shopifyClient.theme
         .list({ limit: 5 })
         .then((themes) => console.log(themes))
-        .catch((err) => console.error(err));
-    /*await shopifyClient.theme.list()
+        .catch((err) => console.error(err));*/
+    await shopifyClient.theme.list()
         .then(themes => {
             themes.map(existingTheme => {
                 if (existingTheme.name.includes(themeNameRegex)) {
@@ -32,7 +32,7 @@ const listTheme = async () => {
                     }
                 }
             })
-        }, err => console.error(err)); */
+        }, err => console.error(err));
 };
 
 listTheme();
