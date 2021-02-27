@@ -26,6 +26,7 @@
     "@octokit/core": "^3.2.5",
     "archiver": "^5.2.0",
     "dotenv": "^8.2.0",
+    "github-comment": "^1.0.1",
     "live-server": "^1.2.1",
     "ngrok": "^3.4.0",
     "shopify-api-node": "^3.6.5"
