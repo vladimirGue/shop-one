@@ -1,19 +1,8 @@
 #!/usr/bin/env node
 
-//const shopifyClient = require('./lib/shopify-client');
+const shopifyClient = require('./lib/shopify-client');
 const prData = require('./lib/pr-data');
 const theme = require('./lib/theme');
-const Shopify = require('shopify-api-node');
-require('dotenv').config();
-
-/*
-💪 Get Environment Variables
-*/
-const {
-    SHOP_NAME,
-    API_KEY,
-    API_PASSWORD,
-} = process.env;
 
 const listTheme = async () => {
     const data = prData.getPrData();
@@ -29,12 +18,7 @@ const listTheme = async () => {
     
     const newThemeName = theme.getThemeName({ prNumber: data.number });
     const themeNameRegex = `GITHUB-PR-${data.number}`;
-    const shopify = new Shopify({
-        shopName: SHOP_NAME,
-        apiKey: API_KEY,
-        password: API_PASSWORD
-    });
-    shopify.theme
+    shopifyClient.theme
         .list({ limit: 5 })
         .then((themes) => console.log(themes))
         .catch((err) => console.error(err));
