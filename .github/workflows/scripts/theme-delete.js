@@ -3,6 +3,7 @@
 const shopifyClient = require('./lib/shopify-client');
 const prData = require('./lib/pr-data');
 const theme = require('./lib/theme');
+const Shopify = require('shopify-api-node');
 
 const listTheme = async () => {
     const data = prData.getPrData();
@@ -18,7 +19,8 @@ const listTheme = async () => {
     
     const newThemeName = theme.getThemeName({ prNumber: data.number });
     const themeNameRegex = `GITHUB-PR-${data.number}`;
-    shopifyClient.theme
+    const shopify = new Shopify();
+    shopify.theme
         .list({ limit: 5 })
         .then((themes) => console.log(themes))
         .catch((err) => console.error(err));
