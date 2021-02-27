@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - developer
 
 jobs:
   delete_theme_preview:

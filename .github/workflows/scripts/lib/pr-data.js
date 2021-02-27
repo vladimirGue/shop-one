@@ -11,8 +11,8 @@ const {
 getPrData = async() => {
 const appOctokit = new Octokit();
   
-  const { data } = await appOctokit.request("GET /repos/vladimirGue/shop-one");
-  console.log(data.number);
+  const { data } = await appOctokit.request("GET /repos/vladimirGue/shop-one/events/payload");
+  console.log(data.number+' + '+data.action);
 }
 /*getPrData = async() => {
     //return JSON.parse(fs.readFileSync('/home/runner/work/_temp/_github_workflow/event.json'));
