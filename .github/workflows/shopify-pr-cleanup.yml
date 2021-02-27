@@ -1,7 +1,7 @@
 name: Merged PR Cleanup
 # This workflow is triggered on pull_request
 on:
-  push:
+  pull_request:
     branches:
       - master
       - developer

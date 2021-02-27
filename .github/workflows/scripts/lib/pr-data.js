@@ -11,7 +11,7 @@ const {
 getPrData = async() => {
 const appOctokit = new Octokit();
   
-  const { data } = await appOctokit.request("GET /repos/vladimirGue/shop-one/pulls");
+  const { data } = await appOctokit.request("GET /repos/vladimirGue/shop-one/events");
   console.log(data[0].number+' + '+data[0].action);
 }
 /*getPrData = async() => {
