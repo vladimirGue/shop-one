@@ -8,6 +8,7 @@ const {
     GITHUB_AUTH_TOKEN,
 } = process.env;
 
+getPrData = async() => {
 const appOctokit = new Octokit({
     authStrategy: createAppAuth,
     auth: {
@@ -18,6 +19,7 @@ const appOctokit = new Octokit({
   
   const { data } = await appOctokit.request("/app");
   console.log(data);
+}
 /*getPrData = async() => {
     //return JSON.parse(fs.readFileSync('/home/runner/work/_temp/_github_workflow/event.json'));
     try {
@@ -30,5 +32,5 @@ const appOctokit = new Octokit({
         process.exit(1);
     }
     
-};
-getPrData();*/
+};*/
+getPrData();
