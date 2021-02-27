@@ -11,8 +11,8 @@ const {
 module.exports.getPrData = async() => {
     //return JSON.parse(fs.readFileSync('/home/runner/work/_temp/_github_workflow/event.json'));
     try {
-        const octokit = new Octokit({ auth:`cd9e9f9cbce4742c495ec206c735d16e18f12481`});
-        const event_path= await octokit.request("GET /repos/{owner}/{repo}/events", {
+        //const octokit = new Octokit({ auth:`cd9e9f9cbce4742c495ec206c735d16e18f12481`});
+        const event_path= await Octokit.request("GET /repos/{owner}/{repo}/events", {
             owner: 'vladimirGue',
             repo: 'shop-one',
           });
