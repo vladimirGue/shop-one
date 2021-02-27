@@ -37,7 +37,7 @@ const uploadTheme = async () => {
         const themeName = theme.getThemeName({ prNumber: data.number });
         const themeUrl = `${ngrokUrl}/theme.zip`;
 
-        console.log(themeUrl+' + '+themeName+' +  '+data);
+        console.log(themeUrl+' + '+themeName+' + '+data);
         await shopifyClient.theme.create({
             name: themeName,
             src: themeUrl,
