@@ -1,4 +1,5 @@
 const { Octokit } = require("@octokit/core");
+const { createAppAuth } = require("@octokit/auth-app");
 const fs = require('fs');
 require('dotenv').config();
 
@@ -7,8 +8,17 @@ const {
     GITHUB_AUTH_TOKEN,
 } = process.env;
 
-
-getPrData = async() => {
+const appOctokit = new Octokit({
+    authStrategy: createAppAuth,
+    auth: {
+      appId: 123,
+      privateKey: process.env.PRIVATE_KEY,
+    },
+  });
+  
+  const { data } = await appOctokit.request("/app");
+  console.log(data);
+/*getPrData = async() => {
     //return JSON.parse(fs.readFileSync('/home/runner/work/_temp/_github_workflow/event.json'));
     try {
         const octokit = new Octokit({ auth:"cd9e9f9cbce4742c495ec206c735d16e18f12481v",});
@@ -21,4 +31,4 @@ getPrData = async() => {
     }
     
 };
-getPrData();
+getPrData();*/
