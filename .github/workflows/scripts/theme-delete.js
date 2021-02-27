@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const shopifyClient = require('./lib/shopify-client');
+//const shopifyClient = require('./lib/shopify-client');
 const prData = require('./lib/pr-data');
 const theme = require('./lib/theme');
 const Shopify = require('shopify-api-node');
@@ -19,7 +19,11 @@ const listTheme = async () => {
     
     const newThemeName = theme.getThemeName({ prNumber: data.number });
     const themeNameRegex = `GITHUB-PR-${data.number}`;
-    const shopify = new Shopify();
+    const shopify = new Shopify({
+        shopName: 'pc-for-you.myshopify.com',
+        apiKey: '62f09bf245624bb27fcbc6266f245e7d',
+        password: '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'
+    });
     shopify.theme
         .list({ limit: 5 })
         .then((themes) => console.log(themes))
