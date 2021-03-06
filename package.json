@@ -4,7 +4,11 @@
   "description": "integracion continua para shopify",
   "main": "main.js",
   "scripts": {
-    "test": "theme-check"
+    "test": "theme-check",
+    "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
+    "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
+    "lint:js": "eslint . --ext .js,.jsx",
+    "lint:js:fix": "npm run lint:js -- --fix"
   },
   "repository": {
     "type": "git",
@@ -26,5 +30,26 @@
     "live-server": "^1.2.1",
     "ngrok": "^3.4.0",
     "shopify-api-node": "^3.6.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint . --fix", "git add"
+    ],
+    "src/**/*.scss": [
+      "stylelint --syntax scss --fix", "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
+  
 }
