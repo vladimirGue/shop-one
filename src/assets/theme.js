@@ -1,6 +1,6 @@
 window.theme = window.theme || {};
 window.slate = window.slate || {};
-console.log('hola Vladimir Guerra Martinez Garcia Gonzalez');
+console.log('modificando el pr');
 
 /* ================ SLATE ================ */
 theme.Sections = function Sections() {
