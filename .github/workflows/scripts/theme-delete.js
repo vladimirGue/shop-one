@@ -18,10 +18,6 @@ const listTheme = async () => {
     
     const newThemeName = theme.getThemeName({ prNumber: data.number });
     const themeNameRegex = `GITHUB-PR-${data.number}`;
-    /*shopifyClient.theme
-        .list({ limit: 5 })
-        .then((themes) => console.log(themes))
-        .catch((err) => console.error(err));*/
     await shopifyClient.theme.list()
         .then(themes => {
             themes.map(existingTheme => {
