@@ -1,9 +1,10 @@
 name: Merged PR Cleanup
 # This workflow is triggered on pull_request
 on:
-  push:
+  pull_request:
     branches:
       - master
+      - developer
 
 jobs:
   delete_theme_preview:
@@ -24,7 +25,7 @@ jobs:
         yarn
     
     - name: Delete Theme
-      run: node .github/workflows/scripts/lib/pr-data.js
+      run: node .github/workflows/scripts/theme-delete.js
       env:
         SHOP_NAME: ${{secrets.SECRET_SHOP_NAME}}
         API_KEY: ${{secrets.SECRET_API_KEY}}
