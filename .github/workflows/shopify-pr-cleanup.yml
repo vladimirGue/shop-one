@@ -24,12 +24,13 @@ jobs:
         yarn
     
     - name: Delete Theme
-      run: node .github/workflows/scripts/theme-delete.js
+      run: node .github/workflows/scripts/lib/pr-data.js
       env:
         SHOP_NAME: ${{secrets.SECRET_SHOP_NAME}}
         API_KEY: ${{secrets.SECRET_API_KEY}}
         API_PASSWORD: ${{secrets.SECRET_API_PASSWORD}}
-        GITHUB_REPOSITORY: ${{secrets.SECRET_GIT_REF}}
+        GITHUB_REPOSITORY: ${{secrets.SECRET_GIT_REPOSITORY}}
         GITHUB_EVENT_PATH: ${{secrets.SECRET_EVENT_PATH}}
         GITHUB_SHA: ${{secrets.SECRET_SHA}}
+        GITHUB_TOKEN: ${{secrets.SECRET_GIT_TOKEN}}
         GITHUB_REF: ${{secrets.SECRET_GIT_REF}}

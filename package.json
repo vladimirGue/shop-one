@@ -8,7 +8,8 @@
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
     "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
     "lint:js": "eslint . --ext .js,.jsx",
-    "lint:js:fix": "npm run lint:js -- --fix"
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "start": "node .github/workflows/scripts/theme-upload.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
   },
   "homepage": "https://github.com/vladimirGue/shop-one#readme",
   "dependencies": {
+    "@octokit/auth-app": "^3.0.0",
+    "@octokit/core": "^3.2.5",
     "archiver": "^5.2.0",
     "dotenv": "^8.2.0",
     "live-server": "^1.2.1",
