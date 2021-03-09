@@ -41,10 +41,12 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
-      "eslint . --fix", "git add"
+      "eslint . --fix",
+      "git add"
     ],
     "src/**/*.scss": [
-      "stylelint --syntax scss --fix", "git add"
+      "stylelint --syntax scss --fix",
+      "git add"
     ]
   },
   "husky": {
@@ -52,5 +54,4 @@
       "pre-commit": "lint-staged"
     }
   }
-  
 }
