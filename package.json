@@ -28,8 +28,8 @@
   "dependencies": {
     "archiver": "^5.2.0",
     "dotenv": "^8.2.0",
+    "lint": "^0.7.0",
     "live-server": "^1.2.1",
-    "make-lint": "^1.0.1",
     "ngrok": "^3.4.0",
     "shopify-api-node": "^3.6.5"
   },
