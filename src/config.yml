@@ -1,6 +1,6 @@
 development:
   password: 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
-  theme_id: 118815981723
+  theme_id: 118815817883
   store: pc-for-you.myshopify.com
   ignore_files:
     - "*.gif"
@@ -12,3 +12,7 @@ development:
     - "package.json"
     - "config/settings_data.json"
     - "node_modules/*"
+    - ".eslintignore"
+    - ".eslintrc.json"
+    - ".yarnclean"
+    - "yarn.lock"
