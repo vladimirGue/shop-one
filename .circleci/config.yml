@@ -18,7 +18,7 @@ jobs:
           paths:
             - node_modules
       # Lint Code
-      - run: yarn lint:scss
+      - run: yarn stylelint
       - run: yarn lint:js
       # TODO: Upload Theme to Dropbox/MSDrive
       # - run:

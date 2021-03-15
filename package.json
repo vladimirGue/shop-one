@@ -9,7 +9,7 @@
     "lint:scss:fix": "stylelint src/**/devNew/*.scss --syntax scss --fix",
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "deploy": "cd src && theme deploy --env=development",
+    "deploy": "cd src && theme deploy devNew/newSections.js --env=development",
     "prepare": "husky install"
   },
   "repository": {
