@@ -1,6 +1,6 @@
 window.theme = window.theme || {};
 window.slate = window.slate || {};
-console.log('modificando el ci');
+console.log('modificando el cii');
 
 /* ================ SLATE ================ */
 theme.Sections = function Sections() {

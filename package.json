@@ -4,13 +4,12 @@
   "description": "integracion continua para shopify",
   "main": "main.js",
   "scripts": {
-    "test": "theme-check",
-    "stylelint": "stylelint **/devNew/*.scss",
-    "lint:scss": "npx stylelint **/devNew/*.scss --syntax scss",
+    "test": "eslint . --ext .js,.jsx",
+    "stylelint": "stylelint **/devNew/*.scss --syntax scss",
     "lint:scss:fix": "stylelint src/**/devNew/*.scss --syntax scss --fix",
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "deploy": "theme deploy --env=development",
+    "deploy": "cd src && theme deploy --env=development",
     "prepare": "husky install"
   },
   "repository": {
@@ -46,18 +45,20 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-shopify": "^7.4.0"
   },
+  
   "lint-staged": {
-    "src/**/devNew/*.{js,jsx}": [
-      "eslint . --fix",
+    "src/**/devNew/*.scss": [
+      "stylelint --syntax scss --fix",
       "git add"
     ],
-    "src/**/*.scss": [
-      "stylelint --syntax scss --fix",
+    "src/**/devNew/*.{js,jsx}": [
+      "eslint . --fix",
       "git add"
     ]
   },
   "husky": {
     "hooks": {
+      "commit-msg": "lint-staged",
       "pre-commit": "lint-staged"
     }
   }
