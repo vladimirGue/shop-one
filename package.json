@@ -9,6 +9,7 @@
     "lint:scss:fix": "stylelint src/**/devNew/*.scss --syntax scss --fix",
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:js:fix": "npm run lint:js -- --fix",
+    "watch": "cd src && theme watch",
     "deploy": "cd src && theme deploy devNew/newSections.js --env=development",
     "prepare": "husky install"
   },
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/vladimirGue/shop-one#readme",
   "dependencies": {
+    "@shopify/themekit": "^1.1.7",
     "archiver": "^5.2.0",
     "dotenv": "^8.2.0",
     "lint": "^0.7.0",
@@ -45,7 +47,6 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-shopify": "^7.4.0"
   },
-  
   "lint-staged": {
     "src/**/devNew/*.scss": [
       "stylelint --syntax scss --fix",
