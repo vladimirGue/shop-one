@@ -5,11 +5,10 @@
   "main": "main.js",
   "scripts": {
     "test": "eslint . --ext .js,.jsx",
-    "stylelint": "stylelint **/devNew/*.scss --syntax scss",
-    "lint:scss:fix": "stylelint src/**/devNew/*.scss --syntax scss --fix",
+    "stylelint": "stylelint **/*.scss --syntax scss",
+    "lint:scss:fix": "stylelint src/**/*.scss --syntax scss --fix",
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "watch": "cd src && theme watch",
     "deploy": "cd src && shopify-themekit deploy assets/newSections.js --env development",
     "prepare": "husky install"
   },
@@ -59,8 +58,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "lint-staged",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "lint-staged"
     }
   }
 }
