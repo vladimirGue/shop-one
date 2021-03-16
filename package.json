@@ -9,7 +9,7 @@
     "lint:scss:fix": "stylelint src/**/*.scss --syntax scss --fix",
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "deploy": "cd src && shopify-themekit deploy assets/newSections.js --env development",
+    "deploy": "cd src && shopify-themekit deploy assets/newSections.js --env test",
     "prepare": "husky install"
   },
   "repository": {
@@ -28,11 +28,7 @@
   "homepage": "https://github.com/vladimirGue/shop-one#readme",
   "dependencies": {
     "@shopify/themekit": "^1.1.7",
-    "archiver": "^5.2.0",
-    "dotenv": "^8.2.0",
     "lint": "^0.7.0",
-    "live-server": "^1.2.1",
-    "ngrok": "^3.4.0",
     "shopify-api-node": "^3.6.5"
   },
   "devDependencies": {
@@ -58,8 +54,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "lint-staged"
+      "pre-commit": "npm test"
     }
   }
 }
