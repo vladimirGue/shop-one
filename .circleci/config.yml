@@ -4,7 +4,7 @@ jobs:
     docker: 
       - image: circleci/node:12
 
-    working_directory: ~/src
+    working_directory: ~/repo
 
     steps:
       - checkout
@@ -25,5 +25,5 @@ jobs:
       #   name: Upload to 
       #   command: curl https://slack.com/api/files.upload -F token="${SLACK_TOKEN}" -F channels="${SLACK_CHANNEL}" -F title="${apk_name}" -F filename="${apk_name}" -F file=@app/build/outputs/apk/debug/app-debug.apk
       # TODO: Upload Theme to Shopify
-      - run: node .circleci/scripts/deploy.js ./src
+      - run: cd src | node .circleci/scripts/deploy.js ./src
       # Continously Check for Preview Available (Can browser test...)
