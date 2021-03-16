@@ -1,2 +1,6 @@
 node_modules/
-src/assets/*
+src/assets/gift-card.js
+src/assets/lazysizes.min.js
+src/assets/theme.js
+src/assets/theme.scss.liquid
+src/assets/vendor.js

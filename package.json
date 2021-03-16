@@ -10,7 +10,7 @@
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:js:fix": "npm run lint:js -- --fix",
     "watch": "cd src && theme watch",
-    "deploy": "cd src && shopify-themekit deploy devNew/newSections.js --env development",
+    "deploy": "cd src && shopify-themekit deploy assets/newSections.js --env development",
     "prepare": "husky install"
   },
   "repository": {

@@ -18,7 +18,9 @@
             "error",
             "windows"
         ],
-        "no-underscore-dangle":"off"
+        "no-underscore-dangle":"off",
+        "no-console":"off",
+        "eol-last":"off"
     },
     "globals": {
         "document": true,
