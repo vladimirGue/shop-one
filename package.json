@@ -9,7 +9,7 @@
     "lint:scss:fix": "stylelint src/**/*.scss --syntax scss --fix",
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "deploy": "cd src && shopify-themekit deploy assets/newSections.js --env test",
+    "deploy": "cd src && shopify-themekit deploy assets/newSections.js assets/newSections.scss --env test",
     "prepare": "husky install"
   },
   "repository": {
