@@ -13,6 +13,8 @@
         "ecmaVersion": 12
     },
     "rules": {
+        "space-in-parens":["error", "never"],
+        "no-multiple-empty-lines":"error",
         "import/no-unresolved": ["error", {"ignore": ["^jquery"]}],
         "linebreak-style": [
             "error",

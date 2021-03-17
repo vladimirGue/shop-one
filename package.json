@@ -28,8 +28,7 @@
   "homepage": "https://github.com/vladimirGue/shop-one#readme",
   "dependencies": {
     "@shopify/themekit": "^1.1.7",
-    "lint": "^0.7.0",
-    "shopify-api-node": "^3.6.5"
+    "lint": "^0.7.0"
   },
   "devDependencies": {
     "eslint": "^7.21.0",

@@ -15,6 +15,9 @@
         "declaration-property-value-whitelist": null,
         "function-url-scheme-whitelist": null,
         "property-blacklist": null,
-        "unit-blacklist": null
+        "unit-blacklist": null,
+        "declaration-no-important": true,
+        "max-nesting-depth": 5,
+        "no-duplicate-selectors": true
     }
   }
